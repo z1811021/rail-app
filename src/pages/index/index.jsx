@@ -31,7 +31,6 @@ export default function Index() {
     return encryptedData;
   }
   async function submit() {
-    alert(123);
     if (username && password) {
       console.log(`${apiDomain}/jwt/login`);
       const keyObject = await axios.post(`${apiDomain}/jwt/getkey`);
