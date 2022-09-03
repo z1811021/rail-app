@@ -60,7 +60,7 @@ export default function Index() {
           },
         });
         await sleep(1000);
-        Taro.navigateTo({
+        Taro.reLaunch({
           url: '/pages/home/index',
         });
       } else {

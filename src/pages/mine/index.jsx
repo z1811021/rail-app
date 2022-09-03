@@ -20,7 +20,7 @@ export default function Index() {
       success: async function(res) {
         console.log(res.data.token);
         setToken(res.data.token);
-        await handleSearch(pageIndex, false);
+        await handleSearch(pageIndex, false, res.data.token);
         console.log(
           '🚀 ~ file: index.jsx ~ line 24 ~ success:function ~ pageIndex',
           pageIndex,
@@ -53,10 +53,10 @@ export default function Index() {
 
   const scrollToLower = () => {
     console.log(1);
-    handleSearch(pageIndex, false);
+    handleSearch(pageIndex, false.valueOf, token);
   };
-  const search = () => handleSearch(pageIndex, true);
-  async function handleSearch(index, isNewSearch) {
+  const search = () => handleSearch(pageIndex, true, token);
+  async function handleSearch(index, isNewSearch, key) {
     const params = {
       // scanNum: value,
       // startDate: dateSel,
@@ -70,11 +70,13 @@ export default function Index() {
       params,
     );
     try {
+      console.log(1);
+      console.log(key);
       const resData = await axios.post(`${apiDomain}/api/device/list`, params, {
         withCredentials: false, // 跨域我们暂时 false
         headers: {
           'Content-Type': 'application/json',
-          token,
+          token: key,
         },
       });
       console.log(
