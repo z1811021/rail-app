@@ -13,7 +13,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "taroDemo";
+    return "接触网在线监控系统";
   }
 
   /**
