@@ -44,14 +44,29 @@ export default function Index() {
     );
   }
   function getLong() {
-    // todo
-    setInputInfo(Object.assign({}, inputInfo, { longitude: '30.5496682776' }));
-    return '30.5496682776';
-  }
-  function getLati() {
-    // todo
-    setInputInfo(Object.assign({}, inputInfo, { latitude: '104.0462314030' }));
-    return '104.0462314030';
+    Taro.getLocation({
+      type: 'wgs84',
+      success: function(res) {
+        console.log('🚀 ~ file: index.jsx ~ line 50 ~ getLong ~ res', res);
+        setInputInfo(
+          Object.assign({}, inputInfo, {
+            longitude: res.longitude,
+            latitude: res.latitude,
+          }),
+        );
+        return `${res.longitude}, ${res.latitude}`;
+      },
+      fail: async function(res) {
+        Taro.atMessage({
+          message: '请打开地理位置以便查询您的坐标',
+          type: 'error',
+        });
+        await sleep(1500);
+        Taro.reLaunch({
+          url: '/pages/home/index',
+        });
+      },
+    });
   }
   function backTest() {
     Taro.redirectTo({
@@ -59,7 +74,54 @@ export default function Index() {
     });
   }
   async function submit() {
-    console.log(inputInfo);
+    const validateArr = [
+      ['设备号', 'deviceNum'],
+      ['锚段号', 'anchorNum'],
+      ['杆号', 'rodNum'],
+      ['坠砣高度', 'weightHeight'],
+      ['据地高度', 'groundHeight'],
+    ];
+    for (let i of validateArr) {
+      const key = i[1];
+      const name = i[0];
+      if (!inputInfo[key]) {
+        Taro.atMessage({
+          message: name + '不能为空',
+          type: 'error',
+        });
+        return;
+      }
+    }
+    if (
+      isNaN(Number(inputInfo.weightHeight)) ||
+      isNaN(Number(inputInfo.groundHeight))
+    ) {
+      Taro.atMessage({
+        message: '坠砣高度或据地高度请输入数字',
+        type: 'error',
+      });
+      return;
+    }
+    if (
+      Number(inputInfo.weightHeight) < 10 ||
+      Number(inputInfo.weightHeight) > 450
+    ) {
+      Taro.atMessage({
+        message: '坠砣高度不能大于450或小于10',
+        type: 'error',
+      });
+      return;
+    }
+    if (
+      Number(inputInfo.groundHeight) < 50 ||
+      Number(inputInfo.groundHeight) > 500
+    ) {
+      Taro.atMessage({
+        message: '坠砣高度不能大于450或小于10',
+        type: 'error',
+      });
+      return;
+    }
     Taro.getStorage({
       key: 'info',
       success: async function(res) {
@@ -99,10 +161,10 @@ export default function Index() {
               message: resData.data.msg,
               type: 'error',
             });
-            await sleep(1500);
-            Taro.redirectTo({
-              url: '/pages/home/index',
-            });
+            // await sleep(1500);
+            // Taro.redirectTo({
+            //   url: '/pages/home/index',
+            // });
           }
         } catch (e) {
           setIsLoading(false);
@@ -178,7 +240,7 @@ export default function Index() {
           </Button>
         </AtInput>
       </AtForm>
-      <Text className="page-section-title">线类型</Text>
+      <View className="add_order_list_space_height"></View>
       <Picker
         mode="selector"
         range={['接触线', '承力索']}
@@ -193,7 +255,7 @@ export default function Index() {
         }
       >
         <View className="picker">
-          当前选择：
+          选择线缆类型：
           {inputInfo?.wireType
             ? inputInfo?.wireType === 10
               ? '接触线'
@@ -201,7 +263,7 @@ export default function Index() {
             : '接触线'}
         </View>
       </Picker>
-      <Text className="page-section-title">点类型</Text>
+      <View className="add_order_list_space_height"></View>
       <Picker
         mode="selector"
         range={['头端', '尾端']}
@@ -216,7 +278,7 @@ export default function Index() {
         }
       >
         <View className="picker">
-          当前选择：
+          选择线缆位置：
           {inputInfo?.pointType
             ? inputInfo?.pointType === 10
               ? '头端'
@@ -224,10 +286,10 @@ export default function Index() {
             : '头端'}
         </View>
       </Picker>
-      <Text className="page-section-title">路类型</Text>
+      <View className="add_order_list_space_height"></View>
       <Picker
         mode="selector"
-        range={['头端', '尾端']}
+        range={['上行', '下行']}
         onChange={val => changeSelectorVal('lineType', val)}
         className="page-section"
         value={
@@ -239,7 +301,7 @@ export default function Index() {
         }
       >
         <View className="picker">
-          当前选择：
+          选择铁路方向：
           {inputInfo?.lineType
             ? inputInfo?.lineType === 10
               ? '上行'
@@ -251,16 +313,16 @@ export default function Index() {
       <AtForm>
         <AtInput
           title="坠砣高度"
-          type="text"
-          placeholder=""
+          type="digit"
+          placeholder="坠砣顶端距地高度 XXXX 厘米"
           value={inputInfo?.weightHeight || ''}
           onChange={val => changeVal('weightHeight', val)}
           className="add_order_input"
         />
         <AtInput
           title="据地高度"
-          type="text"
-          placeholder=""
+          type="digit"
+          placeholder="坠砣底端距地高度 XXXX 厘米"
           value={inputInfo?.groundHeight || ''}
           onChange={val => changeVal('groundHeight', val)}
           className="add_order_input"
@@ -269,8 +331,11 @@ export default function Index() {
           title="经纬度"
           type="text"
           placeholder=""
-          value={`${inputInfo?.longitude ??
-            getLong()} , ${inputInfo?.latitude ?? getLati()}`}
+          value={
+            inputInfo?.longitude
+              ? `${inputInfo.longitude}, ${inputInfo.latitude}`
+              : getLong()
+          }
           disabled
           className="add_order_input_long"
         />

@@ -75,7 +75,12 @@ export default function Index() {
     <View className="index">
       <AtMessage />
       <Image src="../../attch/logo.jpeg" style="width:111px" mode="widthFix" />
-      <View className="header">接触网在线监控系统</View>
+      <View className="header">
+        电气化铁路柔性接触网索故障监测及预警系统
+      </View>
+      <View className="headerSub">
+        手持安全终端
+      </View>
       <View style="height: 106px">
         <AtForm onSubmit={() => submit()}>
           <AtInput

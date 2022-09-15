@@ -186,24 +186,24 @@ export default function Index() {
                 </View>
                 <View className="mine_item_text">
                   {item?.wireType === 10
-                    ? '线类型: 接触网'
+                    ? '线缆类型: 接触网'
                     : item?.wireType === 20
-                    ? '线类型: 承力索'
-                    : '线类型: 接触网'}
+                    ? '线缆类型: 承力索'
+                    : '线缆类型: 接触网'}
                 </View>
                 <View className="mine_item_text">
                   {item?.pointType === 10
-                    ? '点类型: 头端'
+                    ? '线缆位置: 头端'
                     : item?.pointType === 20
-                    ? '点类型: 尾端'
-                    : '点类型: 头端'}
+                    ? '线缆位置: 尾端'
+                    : '线缆位置: 头端'}
                 </View>
                 <View className="mine_item_text">
                   {item?.lineType === 10
-                    ? '路类型: 上行'
+                    ? '铁路方向: 上行'
                     : item?.lineType === 20
-                    ? '路类型: 下行'
-                    : '路类型: 上行'}
+                    ? '铁路方向: 下行'
+                    : '铁路方向: 上行'}
                 </View>
                 <View className="mine_item_text">
                   {item?.weightHeight ? `坠砣高度: ${item?.weightHeight}` : ''}
