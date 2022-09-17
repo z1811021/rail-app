@@ -69,8 +69,8 @@ export default function Index() {
     });
   }
   function backTest() {
-    Taro.redirectTo({
-      url: '/pages/index/index',
+    Taro.reLaunch({
+      url: '/pages/home/index',
     });
   }
   async function submit() {

@@ -4,10 +4,10 @@ name: Assemble Android Debug
 # 触发工作流程的事件
 on:
   push:
-    branches: [ master ]
-    tags: [ v* ]
+    branches: [master]
+    tags: [v*]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
   workflow_dispatch:
 
@@ -16,7 +16,7 @@ env:
   # 应用的application_id
   APP_ID: com.tarodemo
   # 应用名称
-  APP_NAME: Taro Demo
+  APP_NAME: 荣远监测
   # 打包类型
   BUILD_TYPE: debug
   # 版本名称

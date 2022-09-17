@@ -1,7 +1,7 @@
 /*
  * @Author: gongxi33
  * @Date: 2022-08-20 17:03:00
- * @LastEditTime: 2022-09-18 00:52:46
+ * @LastEditTime: 2022-09-18 01:10:33
  * @LastEditors: gongxi33
  * @Description:
  * @FilePath: /rail-all/config/index.js
@@ -67,7 +67,7 @@ const config = {
     },
   },
   rn: {
-    appName: '荣远监测',
+    appName: 'taroDemo',
     output: {
       ios: './ios/main.jsbundle',
       iosAssetsDest: './ios',
