@@ -314,19 +314,23 @@ export default function Index() {
         <AtInput
           title="坠砣高度"
           type="digit"
-          placeholder="坠砣顶端距地高度 XXXX 厘米"
+          placeholder="坠砣顶端距地高度"
           value={inputInfo?.weightHeight || ''}
           onChange={val => changeVal('weightHeight', val)}
           className="add_order_input"
-        />
+        >
+          <View>厘米</View>
+        </AtInput>
         <AtInput
-          title="据地高度"
+          title="距地高度"
           type="digit"
-          placeholder="坠砣底端距地高度 XXXX 厘米"
+          placeholder="坠砣底端距地高度"
           value={inputInfo?.groundHeight || ''}
           onChange={val => changeVal('groundHeight', val)}
           className="add_order_input"
-        />
+        >
+          <View>厘米</View>
+        </AtInput>
         <AtInput
           title="经纬度"
           type="text"

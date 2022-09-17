@@ -7,6 +7,7 @@ import { axios } from 'taro-axios';
 import { useState } from 'react';
 import { apiDomain } from '../../../config/buildConfig';
 import sleep from '../../utils/sleep';
+import logo from '../../attch/logo.jpeg';
 import './index.scss';
 
 export default function Index() {
@@ -74,12 +75,11 @@ export default function Index() {
   return (
     <View className="index">
       <AtMessage />
-      <Image src="../../attch/logo.jpeg" style="width:111px" mode="widthFix" />
-      <View className="header">
-        电气化铁路柔性接触网索故障监测及预警系统
-      </View>
-      <View className="headerSub">
-        手持安全终端
+      <View className="header">电气化铁路柔性接触网索</View>
+      <View className="headerSub">故障监测及预警系统</View>
+      <View className="headerSub2">
+        <Image src={logo} style="width:30px" mode="widthFix" />
+        <View className="headerSub2_title">手持安全终端</View>
       </View>
       <View style="height: 106px">
         <AtForm onSubmit={() => submit()}>
