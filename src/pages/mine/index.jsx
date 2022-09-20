@@ -32,7 +32,7 @@ export default function Index() {
           type: 'warn',
         });
         await sleep(1500);
-        Taro.redirectTo({
+        Taro.reLaunch({
           url: '/pages/index/index',
         });
       },
@@ -94,7 +94,7 @@ export default function Index() {
           type: 'error',
         });
         await sleep(1500);
-        Taro.redirectTo({
+        Taro.reLaunch({
           url: '/pages/home/index',
         });
       }
@@ -104,7 +104,7 @@ export default function Index() {
         type: 'error',
       });
       await sleep(1500);
-      Taro.redirectTo({
+      Taro.reLaunch({
         url: '/pages/index/index',
       });
     }
@@ -130,7 +130,13 @@ export default function Index() {
     }
   }
   function update(item) {
-    console.log('🚀 ~ file: index.jsx ~ line 131 ~ update ~ item', item);
+    Taro.navigateTo({
+      url: '/pages/add/index?id=' + item.id,
+    });
+    Taro.setStorage({
+      key: 'item',
+      data: item,
+    });
   }
   return (
     <View className="mine">
@@ -204,6 +210,13 @@ export default function Index() {
                     : item?.lineType === 20
                     ? '铁路方向: 下行'
                     : '铁路方向: 上行'}
+                </View>
+                <View className="mine_item_text">
+                  {item?.placeType === 10
+                    ? '安装位置: 户外'
+                    : item?.placeType === 20
+                    ? '铁路方向: 隧道内'
+                    : '铁路方向: 户外'}
                 </View>
                 <View className="mine_item_text">
                   {item?.weightHeight ? `坠砣高度: ${item?.weightHeight}` : ''}
