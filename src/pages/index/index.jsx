@@ -1,10 +1,11 @@
 import { View, Image, Button, Input } from '@tarojs/components';
 // import { ScrollView } from 'react-native';
+import DeviceInfo from 'react-native-device-info';
 import Taro from '@tarojs/taro';
 import JSEncrypt from 'jsencrypt';
 import { AtForm, AtInput, AtMessage, AtButton } from 'taro-ui';
 import { axios } from 'taro-axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { apiDomain } from '../../../config/buildConfig';
 import sleep from '../../utils/sleep';
 import logo from '../../attch/logo.jpeg';
@@ -13,6 +14,12 @@ import './index.scss';
 export default function Index() {
   const [username, setUsername] = useState(null);
   const [password, setPassword] = useState(null);
+  useEffect(() => {
+    DeviceInfo.isHeadphonesConnected().then((enabled) => {
+      console.log('🚀 ~ file: index.jsx ~ line 19 ~ DeviceInfo.isHeadphonesConnected ~ enabled', enabled)
+      // true or false
+    });
+  }, []);
   function changeUserName(val) {
     setUsername(val);
   }

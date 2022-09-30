@@ -1,7 +1,7 @@
 /*
  * @Author: gongxi33
  * @Date: 2022-08-20 18:04:24
- * @LastEditTime: 2022-08-25 19:33:50
+ * @LastEditTime: 2022-09-27 21:16:29
  * @LastEditors: gongxi33
  * @Description:
  * @FilePath: /rail-all/config/buildConfig.js
@@ -15,5 +15,5 @@
  * @FilePath: /bio/config/buildConfig.js
  */
 module.exports = {
-  apiDomain: 'http://139.196.11.66',
+  apiDomain: 'https://www.mxboard.cn',
 };
