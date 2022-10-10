@@ -88,7 +88,7 @@ export default function Index() {
         <Image src={logo} style="width:30px" mode="widthFix" />
         <View className="headerSub2_title">手持安全终端</View>
       </View>
-      <View style="height: 106px">
+      <View style="height: 116px; background: transparent">
         <AtForm onSubmit={() => submit()}>
           <AtInput
             name="value"
