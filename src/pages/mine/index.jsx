@@ -167,7 +167,6 @@ export default function Index() {
         className="mine_scroll"
         scrollWithAnimation
       >
-        <AtMessage />
         {data &&
           data.map((item, index) => {
             return (
