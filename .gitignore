@@ -35,6 +35,7 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
+yarn.lock
 
 # BUCK
 buck-out/
@@ -63,4 +64,4 @@ buck-out/
 /android/app/src/main/java/com/tarodemo/generated
 
 ## taro-react-native-release
-!release/** 
+!release/**
