@@ -7620,7 +7620,7 @@ expo-sensors@~11.4.0:
     "@expo/config-plugins" "~5.0.0"
     invariant "^2.2.4"
 
-expo@~46.0.1:
+expo@~46.0.17:
   version "46.0.17"
   resolved "https://registry.npmmirror.com/expo/-/expo-46.0.17.tgz#d558aa11056007269d2a38481982f1ebbe0852f3"
   integrity sha512-rB+KMvjU3lFMkec5LcVFFn0Q2iJUEIoyB9TckKMirA15H5mW4yZMao0ilR7239fJ5ytVoDC8SIf7ZAvTmiMuMw==
@@ -13677,11 +13677,6 @@ react-native-collapsible@^1.6.0:
   version "1.6.0"
   resolved "https://registry.npmmirror.com/react-native-collapsible/-/react-native-collapsible-1.6.0.tgz#ca261ffff16914f872059bb0972e3a78c4b37f9c"
   integrity sha512-beZjdgbT9Y/Pg591Xy5XkKG20HffJiVad4n9bfcUF/f783A+tvOVXnqvbS58Lkaym93mi4jcDPMuW9Vc1t6rqg==
-
-react-native-device-info@^10.2.0:
-  version "10.3.0"
-  resolved "https://registry.npmmirror.com/react-native-device-info/-/react-native-device-info-10.3.0.tgz#6bab64d84d3415dd00cc446c73ec5e2e61fddbe7"
-  integrity sha512-/ziZN1sA1REbJTv5mQZ4tXggcTvSbct+u5kCaze8BmN//lbxcTvWsU6NQd4IihLt89VkbX+14IGc9sVApSxd/w==
 
 react-native-device-info@~10.0.2:
   version "10.0.2"
