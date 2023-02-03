@@ -82,8 +82,8 @@ export default function Index() {
   return (
     <View className="index">
       <AtMessage />
-      <View className="header">电气化铁路柔性接触网索</View>
-      <View className="headerSub">故障监测及预警系统</View>
+      <View className="header">接触网补偿装置</View>
+      <View className="headerSub">状态监测及预警系统</View>
       <View className="headerSub2">
         <Image src={logo} style="width:30px" mode="widthFix" />
         <View className="headerSub2_title">手持安全终端</View>
