@@ -68,7 +68,7 @@
     "axios": "^0.27.2",
     "dayjs": "^1.11.5",
     "eslint-config-prettier": "^8.5.0",
-    "expo": "~46.0.17",
+    "expo": "~46.0.1",
     "expo-av": "~11.2.3",
     "expo-barcode-scanner": "~11.4.0",
     "expo-brightness": "~10.3.0",
