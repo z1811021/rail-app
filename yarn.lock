@@ -13721,7 +13721,7 @@ react-native-webview@~11.23.0:
     escape-string-regexp "2.0.0"
     invariant "2.2.4"
 
-react-native@^0.70.7:
+react-native@^0.70.5:
   version "0.70.7"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.70.7.tgz#515d0fd991703b879fcc1ee95d896946a9dd6704"
   integrity sha512-MvnJJXiEPuOBbf1VPY5WXIUR/n6QB/DAk5XtBz3bzinpy9YBXiiQkhGIrTpVdVt37JeHOzafhfxAMf+Rs8jpvA==
