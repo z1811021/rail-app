@@ -4,7 +4,8 @@ name: Assemble Android Release
 # 触发工作流程的事件
 on:
   push:
-    tags: [ v*, r*, a* ]
+    branches: [ master ]
+    tags: [ v* ]
   pull_request:
     branches: [ master ]
 
@@ -19,9 +20,9 @@ env:
   # 打包类型
   BUILD_TYPE: release
   # 版本名称
-  VERSION_NAME: 1.7.4
+  VERSION_NAME: 1.0.0
   # 版本号
-  VERSION_CODE: 17400
+  VERSION_CODE: 10
   # 密钥库文件
   KEYSTORE_FILE: debug.keystore
   # 密钥库口令
