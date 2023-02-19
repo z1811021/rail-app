@@ -374,9 +374,9 @@ export default function Index() {
       <View className="add_order_list_space_height"></View>
       <AtForm>
         <AtInput
-          title="坠砣高度"
+          title="A值"
           type="number"
-          placeholder="坠砣顶端距地高度"
+          placeholder="设备距离棘轮/滑轮下沿的距离"
           value={inputInfo?.weightHeight || ''}
           onChange={val => changeVal('weightHeight', val)}
           className="add_order_input"
@@ -384,9 +384,19 @@ export default function Index() {
           <View>厘米</View>
         </AtInput>
         <AtInput
-          title="距地高度"
+          title="坠陀串长度"
           type="number"
-          placeholder="坠砣底端距地高度"
+          placeholder="含设备"
+          value={inputInfo?.groundHeight || ''}
+          onChange={val => changeVal('groundHeight', val)}
+          className="add_order_input"
+        >
+          <View>厘米</View>
+        </AtInput>
+        <AtInput
+          title="B值"
+          type="number"
+          placeholder="坠陀串底端距离地面的距离"
           value={inputInfo?.groundHeight || ''}
           onChange={val => changeVal('groundHeight', val)}
           className="add_order_input"

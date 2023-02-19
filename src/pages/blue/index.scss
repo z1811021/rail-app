@@ -1,0 +1,44 @@
+.blue {
+  width: 90vw;
+  margin: 3vw auto;
+
+}
+
+.blue_line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1vw;
+}
+
+.blue_form {
+  height: 1vw;
+}
+
+.blue_view {
+  background-color: #fff;
+  border: 1px solid;
+  border-radius: 10px ;
+  margin-top: 2vw;
+  height: 70vh;
+  padding: 2vw;
+}
+
+.blue_view_send {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.blue_view_send_color {
+  color: #85CDFD;
+}
+
+.blue_view_receive {
+  @extend .blue_view_send;
+}
+
+.blue_view_receive_color {
+  color: #03C988;
+}

@@ -4,6 +4,19 @@ import Taro from '@tarojs/taro';
 import './index.scss';
 
 export default function Index() {
+  return (
+    <View className="home">
+      <Button className="home_mine" onClick={gotoAdd}>
+        新增设备
+      </Button>
+      <Button className="home_blue" onClick={gotoBlue}>
+        链接蓝牙
+      </Button>
+      <Button className="home_add" onClick={gotoMine}>
+        设备列表
+      </Button>
+    </View>
+  );
   function gotoMine() {
     Taro.navigateTo({
       url: '/pages/mine/index',
@@ -14,14 +27,9 @@ export default function Index() {
       url: '/pages/add/index',
     });
   }
-  return (
-    <View className="home">
-      <Button className="home_mine" onClick={gotoAdd}>
-        新增设备
-      </Button>
-      <Button className="home_add" onClick={gotoMine}>
-        设备列表
-      </Button>
-    </View>
-  );
+  function gotoBlue() {
+    Taro.navigateTo({
+      url: '/pages/blue/index',
+    });
+  }
 }

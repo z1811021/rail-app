@@ -1,7 +1,7 @@
 /*
  * @Author: gongxi33
  * @Date: 2022-08-20 17:03:00
- * @LastEditTime: 2022-09-03 01:30:04
+ * @LastEditTime: 2023-02-04 17:42:43
  * @LastEditors: gongxi33
  * @Description:
  * @FilePath: /rail-all/src/app.config.js
@@ -12,6 +12,7 @@ export default defineAppConfig({
     'pages/home/index',
     'pages/add/index',
     'pages/mine/index',
+    'pages/blue/index',
   ],
   window: {
     backgroundTextStyle: 'light',

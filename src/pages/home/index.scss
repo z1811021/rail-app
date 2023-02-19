@@ -15,3 +15,7 @@
   @extend .home_mine;
   background: #07c160;
 }
+.home_blue {
+  @extend .home_mine;
+  background: rgba(114, 50, 221,.6);
+}
