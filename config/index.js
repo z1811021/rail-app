@@ -1,7 +1,7 @@
 /*
  * @Author: gongxi33
- * @Date: 2022-08-20 17:03:00
- * @LastEditTime: 2022-10-01 00:32:05
+ * @Date: 2023-02-19 22:10:40
+ * @LastEditTime: 2023-02-20 19:26:06
  * @LastEditors: gongxi33
  * @Description:
  * @FilePath: /rail-all/config/index.js
@@ -25,9 +25,6 @@ const config = {
   },
   framework: 'react',
   compiler: 'webpack5',
-  cache: {
-    enable: true, // Webpack 持久化缓存配置，建议开启。默认配置请参考：https://docs.taro.zone/docs/config-detail#cache
-  },
   mini: {
     postcss: {
       pxtransform: {
@@ -81,6 +78,9 @@ const config = {
       androidSourcemapOutput: './android/app/src/main/assets/index.android.map',
       // androidSourcemapSourcesRoot: '',
     },
+    sass: {
+      additionalData: '@use "sass:math";',
+    },
     postcss: {
       cssModules: {
         enable: true, // 默认为 false，如需使用 css modules 功能，则设为 true
@@ -90,7 +90,7 @@ const config = {
   },
 };
 
-module.exports = function(merge) {
+module.exports = function (merge) {
   if (process.env.NODE_ENV === 'development') {
     return merge({}, config, require('./dev'));
   }
