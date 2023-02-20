@@ -3160,10 +3160,10 @@
     recyclerlistview "4.2.0"
     tslib "2.4.0"
 
-"@shopify/react-native-skia@^0.1.156":
-  version "0.1.173"
-  resolved "https://registry.npmjs.org/@shopify/react-native-skia/-/react-native-skia-0.1.173.tgz#c1001150656c1532d598208b13943451867c71f8"
-  integrity sha512-/MM9DscHez00Vpuuy/5gCxBBLj87oeyoRbvHzWO40dxaA09S3W3OxZL62rgG+wAm4B9+60nRD87RjbmHr6SNmQ==
+"@shopify/react-native-skia@^0.1.174-beta":
+  version "0.1.174"
+  resolved "https://registry.npmjs.org/@shopify/react-native-skia/-/react-native-skia-0.1.174.tgz#abd36006c6e1f43f9526496a4051466169f85917"
+  integrity sha512-hu1aWZ7kfce/Y65hSiZNbLxPQumeYGRptWvakX6z6j6bJGsYoMhLoHPIATHfRTeZP5LiZt+Kax2Vao+zchugDA==
   dependencies:
     "@types/pixelmatch" "^5.2.4"
     "@types/pngjs" "^6.0.1"
