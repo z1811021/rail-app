@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">荣远监测</string>
+    <string name="logo_desc">荣远监测</string>
+    <string name="logo_power">Powered by Jorge</string>
 </resources>
